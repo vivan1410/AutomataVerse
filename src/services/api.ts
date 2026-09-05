@@ -1,7 +1,13 @@
-/**
- * Reusable Full-Stack API service client utility module
- */
-export const API_BASE_URL = ((import.meta as any).env?.VITE_API_URL as string) || 'http://localhost:5001/api';
+const getApiBaseUrl = (): string => {
+  const rawUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+  let cleaned = rawUrl.trim().replace(/\/+$/, '');
+  if (!cleaned.endsWith('/api')) {
+    cleaned = `${cleaned}/api`;
+  }
+  return cleaned;
+};
+
+export const API_BASE_URL = getApiBaseUrl();
 
 export interface ExplanationResponse {
   success: boolean;
