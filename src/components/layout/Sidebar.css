@@ -1,0 +1,447 @@
+/* -------------------------------------------------------------
+   PREMIUM AAA-QUALITY SIDEBAR LAYOUT
+   ------------------------------------------------------------- */
+.av-sidebar {
+  width: 280px;
+  height: 100%;
+  background: var(--bg-sidebar, #111827);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid var(--sidebar-border, var(--border-subtle));
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, border-color 0.2s ease;
+  z-index: 100;
+  flex-shrink: 0;
+  user-select: none;
+  box-shadow: 6px 0 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+/* Collapsed state adjustments */
+.av-sidebar.collapsed {
+  width: 68px;
+}
+
+/* ---------------- 1. WORKSPACE SWITCHER HEADER ---------------- */
+.sidebar-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--sidebar-border, var(--border-subtle));
+}
+
+.workspace-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--sidebar-hover, rgba(255, 255, 255, 0.03));
+  border: 1px solid var(--sidebar-border, rgba(255, 255, 255, 0.05));
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.workspace-switcher:hover {
+  background: var(--sidebar-hover, rgba(255, 255, 255, 0.06));
+  border-color: var(--sidebar-border, rgba(255, 255, 255, 0.1));
+}
+
+.workspace-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.workspace-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 11px;
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+}
+
+.workspace-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--sidebar-text, var(--text-main));
+  letter-spacing: -0.015em;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Workspace switch dropdown menu */
+.workspace-dropdown-menu {
+  position: absolute;
+  top: 60px;
+  left: 16px;
+  right: 16px;
+  background: var(--bg-card, rgba(14, 20, 36, 0.98));
+  border: 1px solid var(--sidebar-border, rgba(255, 255, 255, 0.08));
+  border-radius: 10px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+  padding: 6px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation: dropdownFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dropdownFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-section-title {
+  padding: 6px 8px;
+  font-size: 9.5px;
+  color: var(--sidebar-heading, var(--text-muted));
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--sidebar-text-muted, var(--text-secondary));
+  transition: all 0.15s ease;
+}
+
+.dropdown-item:hover {
+  background: var(--sidebar-hover, rgba(255, 255, 255, 0.04));
+  color: var(--sidebar-text, var(--text-main));
+}
+
+.dropdown-item.active {
+  background: var(--bg-active, rgba(139, 92, 246, 0.08));
+  color: var(--sidebar-text, var(--text-main));
+  border: 1px solid var(--border-strong, rgba(139, 92, 246, 0.15));
+}
+
+.workspace-badge-name {
+  font-weight: 600;
+  color: #38bdf8;
+}
+
+.workspace-badge-active {
+  font-size: 9px;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* ---------------- 2. NAV MENU CONTENT ---------------- */
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Scrollbar customizations */
+.sidebar-content::-webkit-scrollbar {
+  width: 4px;
+}
+.sidebar-content::-webkit-scrollbar-thumb {
+  background: var(--sidebar-border, rgba(255, 255, 255, 0.05));
+  border-radius: 2px;
+}
+
+.sidebar-section-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.nav-section-title {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sidebar-heading, #475569);
+  padding: 6px 12px;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-item-interactive {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--sidebar-text, var(--text-main));
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.nav-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.nav-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sidebar-text-muted, var(--text-muted));
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.nav-item-interactive:hover .nav-item-icon {
+  transform: rotate(5deg) scale(1.06);
+  color: var(--sidebar-text, var(--text-main));
+}
+
+.nav-item-text {
+  transition: opacity 0.2s ease;
+}
+
+/* Hover effect */
+.nav-item-interactive:hover {
+  transform: translateY(-1px);
+  background: var(--sidebar-hover, rgba(255, 255, 255, 0.08));
+  border-color: var(--sidebar-border, rgba(255, 255, 255, 0.12));
+  color: var(--sidebar-text, var(--text-main));
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+}
+
+/* Active Indicator state */
+.nav-item-interactive.active {
+  background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.35), 0 2px 4px rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.nav-item-interactive.active .nav-item-icon {
+  color: #ffffff !important;
+}
+
+/* ---------------- 3. COLLAPSED MINIMIZED ADAPTATIONS ---------------- */
+.av-sidebar.collapsed .nav-item-text,
+.av-sidebar.collapsed .nav-section-title,
+.av-sidebar.collapsed .workspace-name,
+.av-sidebar.collapsed .workspace-switcher svg,
+.av-sidebar.collapsed .user-text-info,
+.av-sidebar.collapsed .user-xp-coins-stats {
+  display: none !important;
+}
+
+.av-sidebar.collapsed .workspace-switcher {
+  padding: 6px;
+  justify-content: center;
+}
+
+.av-sidebar.collapsed .workspace-info {
+  gap: 0;
+}
+
+.av-sidebar.collapsed .nav-item-interactive {
+  padding: 10px;
+  justify-content: center;
+}
+
+.av-sidebar.collapsed .nav-item-left {
+  justify-content: center;
+  gap: 0;
+}
+
+/* CSS Tooltip in collapsed mode */
+.av-sidebar.collapsed .nav-item-interactive::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 74px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.9);
+  background: #0f172a;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.av-sidebar.collapsed .nav-item-interactive:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+/* ---------------- 4. PREMIUM BOTTOM USER CARD ---------------- */
+.sidebar-footer {
+  padding: 16px;
+  border-top: 1px solid var(--sidebar-border, var(--border-subtle));
+}
+
+.premium-user-card {
+  background: var(--sidebar-hover, rgba(255, 255, 255, 0.02));
+  border: 1px solid var(--sidebar-border, rgba(255, 255, 255, 0.05));
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+.av-sidebar.collapsed .premium-user-card {
+  padding: 6px;
+  border: none;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.user-avatar-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 12px;
+  color: #ffffff;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+}
+
+.online-indicator {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+  border: 2px solid var(--bg-sidebar, #0a0f1e);
+  box-shadow: 0 0 8px #10b981;
+}
+
+.user-text-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.user-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--sidebar-text, var(--text-main));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+}
+
+.user-role {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Logout icon button styling */
+.logout-btn-icon {
+  background: transparent;
+  border: none;
+  color: var(--sidebar-text-muted, var(--text-muted));
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.logout-btn-icon:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+}
+
+/* XP Progression Meter */
+.user-xp-coins-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-top: 1px solid var(--sidebar-border, rgba(255, 255, 255, 0.04));
+  padding-top: 8px;
+}
+
+.xp-bar-track {
+  height: 4px;
+  background: var(--sidebar-hover, rgba(255, 255, 255, 0.08));
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  background: #10b981;
+  border-radius: 2px;
+}
+
+/* ---------------- 5. RESPONSIVE VIEWS & TRANSITION ---------------- */
+@media (max-width: 1024px) {
+  .av-sidebar {
+    width: 220px;
+  }
+  .av-sidebar.collapsed {
+    width: 68px;
+  }
+}
+
+@media (max-width: 768px) {
+  .av-sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    transform: translateX(0);
+    z-index: 1000;
+  }
+  .av-sidebar.collapsed {
+    width: 0 !important;
+    transform: translateX(-100%);
+    box-shadow: none;
+    border: none;
+  }
+}

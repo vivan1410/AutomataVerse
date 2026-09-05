@@ -1,0 +1,276 @@
+.automaton-diagram-view {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgba(13, 17, 23, 0.45);
+  border: 1px solid var(--border-medium);
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 12px 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.diagram-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--border-subtle);
+  box-sizing: border-box;
+}
+
+.diagram-type-tag {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  letter-spacing: 0.1em;
+  background: rgba(61, 235, 255, 0.08);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(61, 235, 255, 0.15);
+}
+
+.diagram-alphabet-tag {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--text-dimmed);
+}
+
+/* React Flow wrapper height and borders */
+.react-flow-canvas-wrapper {
+  width: 100%;
+  height: 320px;
+  background: var(--bg-app);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Node circle design */
+.automaton-node-wrapper {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.node-circle {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--graph-node-bg);
+  border: 2.5px solid var(--graph-node-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+  transition: all var(--transition-fast);
+}
+
+.node-circle:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 12px var(--accent-cyan-glow);
+  transform: scale(1.05);
+}
+
+.node-circle-inner-ring {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--graph-node-border);
+  top: 3px;
+  left: 3px;
+  box-sizing: border-box;
+}
+
+.node-state-name {
+  color: var(--graph-node-text);
+  font-size: 13px;
+  font-weight: 800;
+  z-index: 2;
+  font-family: var(--font-mono);
+}
+
+/* Start state arrow indicator */
+.node-start-arrow-indicator {
+  position: absolute;
+  left: -24px;
+  top: 14px;
+  color: var(--graph-start-arrow);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+
+
+/* Custom looping edge styling */
+.react-flow__edge-path.custom-loop-path {
+  fill: none;
+}
+
+/* Controls matching */
+.custom-flow-controls {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-medium) !important;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--bg-card) !important;
+}
+
+.custom-flow-controls button {
+  background: var(--bg-card) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  color: var(--text-main) !important;
+  fill: var(--text-main) !important;
+}
+
+.custom-flow-controls button:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Explanation panel below diagram */
+.diagram-explanation-panel {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.01);
+  border-top: 1px solid var(--border-subtle);
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.explanation-header {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 8px 0;
+}
+
+.explanation-paragraph {
+  font-size: 13.5px;
+  color: var(--text-normal);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.explanation-divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 16px 0;
+}
+
+.explanation-section-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-dimmed);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.explanation-section-title.green {
+  color: var(--accent-success);
+}
+
+.explanation-section-title.red {
+  color: var(--accent-error, #ff4d4d);
+}
+
+.explanation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.explanation-list li {
+  font-size: 13px;
+  color: var(--text-normal);
+  line-height: 1.5;
+}
+
+.explanation-list li code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-cyan);
+}
+
+.explanation-list.bullets {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.explanation-test-cases-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+/* Hide React Flow Attribution cleanly to prevent right-side covers */
+.react-flow__attribution {
+  display: none !important;
+}
+
+.react-flow__panel {
+  z-index: 4;
+}
+
+/* Validation failed states styles */
+.automaton-diagram-view.validation-failed {
+  border-color: rgba(255, 77, 77, 0.3);
+  background: rgba(255, 77, 77, 0.02);
+}
+
+.validation-error-panel {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.validation-error-panel h4 {
+  color: #ff4d4d;
+  font-size: 16px;
+  margin: 12px 0 8px 0;
+  font-weight: 700;
+}
+
+.validation-error-panel p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  max-width: 450px;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+}
+
+.validation-errors-list {
+  text-align: left;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 77, 77, 0.15);
+  border-radius: 6px;
+  padding: 12px 16px 12px 32px;
+  margin: 0;
+  max-width: 500px;
+  font-size: 12.5px;
+  color: #ffb3b3;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}

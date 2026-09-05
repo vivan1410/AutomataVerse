@@ -1,0 +1,126 @@
+{
+  "users": {
+    "guest@automataverse.io": {
+      "password": "guest",
+      "profile": {
+        "email": "guest@automataverse.io",
+        "username": "guest",
+        "xp": 475,
+        "coins": 45,
+        "level": 3,
+        "streak": 2,
+        "lastActiveDate": "2026-08-20",
+        "lessonsCompleted": [
+          "dfa_lesson_5"
+        ],
+        "chaptersCompleted": [],
+        "quizzesCompleted": [],
+        "challengesSolved": [],
+        "achievements": [
+          "a2",
+          "a3",
+          "a1"
+        ],
+        "questionsSolvedCount": 0,
+        "correctAnswersCount": 0,
+        "totalAnswersCount": 0,
+        "practiceSessions": 0,
+        "challengeSessions": 0,
+        "totalTimeSpent": 0,
+        "longestStreak": 3,
+        "joinDate": "August 2026"
+      }
+    },
+    "vivanraj141007@gmail.com": {
+      "password": "",
+      "provider": "google",
+      "provider_user_id": "107469093891656106811",
+      "profile": {
+        "email": "vivanraj141007@gmail.com",
+        "username": "Vivan Raj",
+        "xp": 1250,
+        "coins": 525,
+        "level": 6,
+        "streak": 9,
+        "lastActiveDate": "2026-09-05",
+        "lessonsCompleted": [
+          "dfa_lesson_6",
+          "nfa_chapter_1"
+        ],
+        "chaptersCompleted": [],
+        "quizzesCompleted": [
+          "speed_round_q_1",
+          "speed_round_q_2",
+          "speed_round_q_3",
+          "speed_round_q_6",
+          "speed_round_q_7",
+          "speed_round_q_4",
+          "speed_round_q_8",
+          "speed_round_q_9",
+          "speed_round_q_10",
+          "speed_round_q_11",
+          "speed_round_q_5"
+        ],
+        "challengesSolved": [
+          "minigame_DRAG_LABEL_1788166584213",
+          "minigame_DRAG_LABEL_1788170664919",
+          "minigame_MISSING_LINK_1788170671948",
+          "minigame_STATE_PUZZLE_1788170683512",
+          "minigame_PREDICT_1788170698418"
+        ],
+        "achievements": [],
+        "questionsSolvedCount": 100,
+        "correctAnswersCount": 100,
+        "totalAnswersCount": 100,
+        "practiceSessions": 11,
+        "challengeSessions": 5,
+        "totalTimeSpent": 0,
+        "longestStreak": 9,
+        "joinDate": "August 2026",
+        "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJKl3qWrz-FNp1ctoXby5O6yS5h9FwkM9xW4dmTinPH32CjdQ=s96-c"
+      }
+    },
+    "kethrabalan.v2025@vitstudent.ac.in": {
+      "password": "",
+      "provider": "google",
+      "provider_user_id": "118011686435319720461",
+      "profile": {
+        "email": "kethrabalan.v2025@vitstudent.ac.in",
+        "username": "Kethra Balan V 25BCE5216",
+        "xp": 445,
+        "coins": 210,
+        "level": 3,
+        "streak": 1,
+        "lastActiveDate": "2026-08-28",
+        "lessonsCompleted": [
+          "nfa_chapter_1"
+        ],
+        "chaptersCompleted": [],
+        "quizzesCompleted": [
+          "speed_round_q_1",
+          "speed_round_q_3",
+          "speed_round_q_5",
+          "speed_round_q_6",
+          "speed_round_q_7",
+          "speed_round_q_2",
+          "speed_round_q_4",
+          "speed_round_q_9",
+          "speed_round_q_10",
+          "speed_round_q_11",
+          "speed_round_q_12"
+        ],
+        "challengesSolved": [],
+        "achievements": [],
+        "questionsSolvedCount": 42,
+        "correctAnswersCount": 42,
+        "totalAnswersCount": 42,
+        "practiceSessions": 11,
+        "challengeSessions": 0,
+        "totalTimeSpent": 0,
+        "longestStreak": 4,
+        "joinDate": "August 2026",
+        "avatar": "https://lh3.googleusercontent.com/a/ACg8ocI50xtxkGVWc0sdmac3s6S-5s1DWnMmqzmfFFDtLXzFBos5zw=s96-c"
+      }
+    }
+  }
+}

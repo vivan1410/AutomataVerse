@@ -1,0 +1,312 @@
+.speed-round-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.speed-round-header {
+  background: var(--bg-panel);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+.timer-bar-bg {
+  height: 6px;
+  background: var(--border-subtle);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.timer-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+  border-radius: 3px;
+  transition: width 1s linear;
+  box-shadow: 0 0 8px var(--accent-cyan-glow);
+}
+
+.timer-bar-fill.warning {
+  background: linear-gradient(90deg, var(--accent-warning) 0%, var(--accent-error) 100%);
+  box-shadow: 0 0 8px rgba(255, 93, 115, 0.4);
+}
+
+.speed-stats-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-badge {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.combo-flame {
+  color: var(--accent-warning);
+  font-weight: 800;
+  text-shadow: 0 0 8px rgba(255, 200, 87, 0.5);
+  animation: pulseCombo 1s infinite alternate;
+}
+
+@keyframes pulseCombo {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+/* Flash feedback overlays */
+.game-screen {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  text-align: center;
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  overflow: hidden;
+}
+
+.game-screen.flash-correct {
+  animation: flashGreen 0.4s ease-out forwards;
+}
+
+.game-screen.flash-incorrect {
+  animation: flashRed 0.4s ease-out forwards;
+}
+
+@keyframes flashGreen {
+  0% { border-color: var(--border-subtle); box-shadow: none; }
+  50% { border-color: var(--accent-success); box-shadow: inset 0 0 20px rgba(64, 232, 122, 0.15), 0 0 20px rgba(64, 232, 122, 0.1); }
+  100% { border-color: var(--border-subtle); box-shadow: none; }
+}
+
+@keyframes flashRed {
+  0% { border-color: var(--border-subtle); box-shadow: none; }
+  50% { border-color: var(--accent-error); box-shadow: inset 0 0 20px rgba(255, 93, 115, 0.15), 0 0 20px rgba(255, 93, 115, 0.1); }
+  100% { border-color: var(--border-subtle); box-shadow: none; }
+}
+
+.game-over-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.game-over-stat {
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.game-over-value {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--text-main);
+  margin-top: 4px;
+}
+
+/* -------------------------------------------------------------
+   Timed DFA Builder Challenge layouts
+   ------------------------------------------------------------- */
+.builder-canvas-area {
+  background: rgba(8, 17, 31, 0.65);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  position: relative;
+  cursor: crosshair;
+  overflow: hidden;
+  box-shadow: inset 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.builder-toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 12px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-subtle);
+  align-items: center;
+}
+
+.builder-node-circle {
+  cursor: grab;
+  transition: fill var(--transition-fast), stroke var(--transition-fast);
+}
+
+.builder-node-circle:active {
+  cursor: grabbing;
+}
+
+.builder-node-circle.selected {
+  stroke: var(--accent-cyan) !important;
+  filter: drop-shadow(0 0 8px var(--accent-cyan-glow));
+}
+
+.builder-node-circle.accept-selected {
+  stroke: var(--accent-purple) !important;
+  filter: drop-shadow(0 0 8px var(--accent-purple-glow));
+}
+
+.test-cases-box {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.test-case-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-subtle);
+}
+
+.test-case-row.pass {
+  border-color: rgba(64, 232, 122, 0.15);
+  background: rgba(64, 232, 122, 0.04);
+}
+
+.test-case-row.fail {
+  border-color: rgba(255, 93, 115, 0.15);
+  background: rgba(255, 93, 115, 0.04);
+}
+
+/* Spotlight shifting beams keyframes */
+@keyframes sweepSpotlightLeft {
+  0%, 100% { transform: rotate(-35deg); }
+  50% { transform: rotate(15deg); }
+}
+
+@keyframes sweepSpotlightRight {
+  0%, 100% { transform: rotate(35deg); }
+  50% { transform: rotate(-15deg); }
+}
+
+.spotlight-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 450px;
+  background: fill;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.25) 0%, transparent 80%);
+  transform-origin: top left;
+  animation: sweepSpotlightLeft 6s ease-in-out infinite;
+  pointer-events: none;
+  filter: blur(8px);
+}
+
+.spotlight-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 450px;
+  background: linear-gradient(225deg, rgba(236, 72, 153, 0.25) 0%, transparent 80%);
+  transform-origin: top right;
+  animation: sweepSpotlightRight 6s ease-in-out infinite;
+  pointer-events: none;
+  filter: blur(8px);
+}
+
+.audience-silhouette-container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 10;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.audience-seat-head {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  position: relative;
+}
+
+.audience-seat-shoulder {
+  width: 36px;
+  height: 20px;
+  border-radius: 12px 12px 0 0;
+  background: #94a3b8;
+  margin-top: 4px;
+}
+
+/* Neon battery cells indicator */
+.battery-indicator {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.battery-cell {
+  width: 12px;
+  height: 20px;
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid var(--border-medium);
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.battery-cell.active {
+  background: var(--accent-success);
+  border-color: var(--accent-success);
+  box-shadow: 0 0 10px rgba(64, 232, 122, 0.7);
+}
+
+.battery-cell.active.warning {
+  background: var(--accent-error);
+  border-color: var(--accent-error);
+  box-shadow: 0 0 10px rgba(255, 93, 115, 0.7);
+}
+
+/* Speed Lines Backdrop scroll */
+.cyber-grid-container {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
