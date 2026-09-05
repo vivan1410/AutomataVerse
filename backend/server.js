@@ -60,7 +60,7 @@ app.use((req, res, next) => {
 app.use(errorHandler);
 
 // Listen to network requests
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`========================================`);
   console.log(`AutomataVerse Express Server is running!`);
   console.log(`Port: ${PORT}`);
