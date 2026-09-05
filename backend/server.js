@@ -8,7 +8,7 @@ const errorHandler = require('./middleware/errorHandler');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Enable CORS for Vite frontend
+// Enable CORS for Vite frontend (local dev and Vercel production)
 const corsOptions = {
   origin: [
     'http://localhost:3000',
@@ -16,7 +16,8 @@ const corsOptions = {
     'http://localhost:4000',
     'http://127.0.0.1:4000',
     'http://localhost:5173',
-    'http://127.0.0.1:5173'
+    'http://127.0.0.1:5173',
+    'https://automata-verse-nine.vercel.app'
   ],
   credentials: true,
   optionsSuccessStatus: 200
